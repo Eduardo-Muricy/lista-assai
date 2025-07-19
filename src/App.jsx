@@ -30,46 +30,51 @@ function App() {
   useEffect(() => {
     fetchItems()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ filterCategory, filterStatus])
+  }, [filterCategory, filterStatus])
 
   function handleItemAdded() {
     fetchItems() // inverte para atualizar lista
   }
 
-  function limparLista() {
-    db.itens.clear()
-    setItems([])
-  }
+  //function limparLista() {
+   // db.itens.clear()
+   // setItems([])
+ // }
 
   return (
     <div>
       <div className="fixed top-0 left-0 right-0">
         <h1 className="text-4xl text-center">Lista de compras</h1>
-        <div className="flex justify-between items-center mt-4">
-          <div className="bg-green-500 w-1/2 p-4 rounded shadow-md">
+
+        <div className="  flex">
+          
+
             <AddItem onItemAdded={handleItemAdded} />
-          </div>
-          <button
-            onClick={limparLista}
-            className="pr-6 text-red-500 text-2xl"
-          >
-            Limpar lista
-          </button>
+
+            {/*<button onClick={limparLista} className="pr-6 text-red-500 md:text-2xl">
+              Limpar lista
+            </button> */}
+
+            
+          
+
         </div>
+
+
+
+        <div className='hidden'>
+          <Filtro
+            filterCategory={filterCategory}
+            setFilterCategory={setFilterCategory}
+            filterStatus={filterStatus}
+            setFilterStatus={setFilterStatus}
+          />
+          <TableNames />
+        </div>
+        <List items={items} setItems={setItems} />
+        <Resume items={items} />
       </div>
 
-      <div className="mt-80"></div>
-      
-      <Filtro
-        filterCategory={filterCategory}
-        setFilterCategory={setFilterCategory}
-        filterStatus={filterStatus}
-        setFilterStatus={setFilterStatus}
-      />
-      <TableNames/>
-
-      <List items={items} setItems={setItems} />
-      <Resume items={items} />
     </div>
   )
 }
