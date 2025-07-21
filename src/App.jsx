@@ -62,7 +62,7 @@ function App() {
 
       </div>
       <div>
-        <div className='flex flex-col items-center justify-center '>
+        <div className='flex flex-col items-center justify-center  '>
           <List items={items} setItems={setItems} />
         </div>
 

@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import db from '../data/db'
 import EditModal from './EditModal'
-import { LuTrash2, LuPenLine } from 'react-icons/lu';
+import { LuTrash2, LuPenLine} from 'react-icons/lu';
+
 
 const List = ({ items, setItems }) => {
 
@@ -69,11 +70,11 @@ const List = ({ items, setItems }) => {
 
 
   return (
-    <div className='mt-95   '>
-      <div className='  py-2'>
+    <div className='mt-95  '>
+      <div className=' py-2'>
         {items.map((item) => (
 
-          <div key={item.id} style={{borderColor: '#e63946'}} className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr_2fr] items-center border-b-1  justify-between gap-6  p-4 mb-2  ${item.purchased ? 'bg-green-200' : ''}`}>
+          <div key={item.id} style={{borderColor: '#e63946'}} className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr_2fr] items-center border-b-1  justify-between gap-6  p-4 mb-2  ${item.purchased ? 'bg-green-500 border-none' : ''}`}>
 
 
             <div className='flex items-center  min-w-0'>
@@ -97,7 +98,7 @@ const List = ({ items, setItems }) => {
             </div>
 
             <div className=' flex items-center justify-center '>
-              <button onClick={() => togglePurchased(item.id, item.purchased)}>{item.purchased ? 'Desmarcar' : 'Marcar'}</button>
+              <button className='border-b-2' style={{borderColor: '#e63946'}} onClick={() => togglePurchased(item.id, item.purchased)}>{item.purchased ? ' Nao comprado' : ' Comprado' }</button>
             </div>
 
             <div className='flex items-center gap-5 justify-center '>

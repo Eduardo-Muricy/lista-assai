@@ -31,9 +31,9 @@ const AddItem = ({ onItemAdded }) => {
       purchased: false
     })
 
-    setNomeProduto("");
-    setCategory("");
-    setPrice(0);
+   // setNomeProduto("");
+    //setCategory("");
+    //setPrice(0);
     onItemAdded();
   }
 
@@ -73,8 +73,8 @@ const AddItem = ({ onItemAdded }) => {
   return (
     <div className='w-full mt-4 flex flex-col'>
 
-      <div className='  px-4 py-4 flex flex-col'>
-        <input className=' p-2 text-xl'
+      <div className='   py-4 flex flex-col'>
+        <input className=' p-2 text-xl border-b-2  ' style={{borderColor: '#e63946'}}
           type="text" value={nomeProduto} onChange={(e) => setNomeProduto(e.target.value)} placeholder='Digite o nome do produto' />
 
 
@@ -86,17 +86,17 @@ const AddItem = ({ onItemAdded }) => {
 
 
 
-        <select className='text-xl p-1' value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option className='text-sm' value="">Selecionar categoria</option>
-          <option className='text-sm' value="Carnes">Carnes</option>
-          <option className='text-sm' value="Frutas">Frutas</option>
-          <option className='text-sm' value="Legumes">Legumes</option>
-          <option className='text-sm' value="Pães">Pães</option>
-          <option className='text-sm' value="Bebidas">Bebidas</option>
-          <option className='text-sm' value="Limpeza">Limpeza</option>
-          <option className='text-sm' value="Higiene">Higiene</option>
-          <option className='text-sm' value="Frios">Frios</option>
-          <option className='text-sm' value="Outros">Outros</option>
+        <select className='text-xl p-1 ' value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option className='text-sm bg-[#14213d]' value="">Selecionar categoria</option>
+          <option className='text-sm bg-[#14213d]' value="Carnes">Carnes</option>
+          <option className='text-sm bg-[#14213d]' value="Frutas">Frutas</option>
+          <option className='text-sm bg-[#14213d]' value="Legumes">Legumes</option>
+          <option className='text-sm bg-[#14213d]' value="Pães">Pães</option>
+          <option className='text-sm bg-[#14213d]' value="Bebidas">Bebidas</option>
+          <option className='text-sm bg-[#14213d]' value="Limpeza">Limpeza</option>
+          <option className='text-sm bg-[#14213d]' value="Higiene">Higiene</option>
+          <option className='text-sm bg-[#14213d]' value="Frios">Frios</option>
+          <option className='text-sm bg-[#14213d]' value="Outros">Outros</option>
 
         </select>
 

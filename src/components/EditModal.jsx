@@ -44,16 +44,16 @@ if(item){
         <div className="mb-3">
           <label className="block mb-1">Categoria:</label>
          <select value={category}  onChange={(e) => setCategory(e.target.value)}>
-             <option value="">Selecionar categoria</option>
-        <option value="Carnes">Carnes</option>
-        <option value="Frutas">Frutas</option>
-        <option value="Legumes">Legumes</option>
-        <option value="Pães">Pães</option>
-        <option value="Bebidas">Bebidas</option>
-        <option value="Limpeza">Limpeza</option>
-        <option value="Higiene">Higiene</option>
-        <option value="Frios">Frios</option>
-        <option value="Outros">Outros</option>
+             <option className='bg-[#14213d]'  value="">Selecionar categoria</option>
+        <option className='bg-[#14213d]' value="Carnes">Carnes</option>
+        <option className='bg-[#14213d]' value="Frutas">Frutas</option>
+        <option className='bg-[#14213d]' value="Legumes">Legumes</option>
+        <option className='bg-[#14213d]' value="Pães">Pães</option>
+        <option className='bg-[#14213d]' value="Bebidas">Bebidas</option>
+        <option className='bg-[#14213d]' value="Limpeza">Limpeza</option>
+        <option className='bg-[#14213d]' value="Higiene">Higiene</option>
+        <option className='bg-[#14213d]' value="Frios">Frios</option>
+        <option className='bg-[#14213d]' value="Outros">Outros</option>
          </select>
         </div>
         <div className="mb-3">
