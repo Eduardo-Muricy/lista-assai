@@ -36,33 +36,17 @@ function App() {
     fetchItems() // inverte para atualizar lista
   }
 
-  //function limparLista() {
-   // db.itens.clear()
-   // setItems([])
- // }
+
 
   return (
-    <div>
-      <div className="fixed top-0 left-0 right-0">
+    <div className="bg-[#14213d] text-white">
+      <div className="fixed top-0 left-0 right-0 bg-[#14213d] " >
         <h1 className="text-4xl text-center">Lista de compras</h1>
 
-        <div className="  flex">
-          
+        <div className="  flex flex-col ">
 
-            <AddItem onItemAdded={handleItemAdded} />
+          <AddItem onItemAdded={handleItemAdded} />
 
-            {/*<button onClick={limparLista} className="pr-6 text-red-500 md:text-2xl">
-              Limpar lista
-            </button> */}
-
-            
-          
-
-        </div>
-
-
-
-        <div className='hidden'>
           <Filtro
             filterCategory={filterCategory}
             setFilterCategory={setFilterCategory}
@@ -71,9 +55,25 @@ function App() {
           />
           <TableNames />
         </div>
-        <List items={items} setItems={setItems} />
-        <Resume items={items} />
+
+
+
+
+
       </div>
+      <div>
+        <div className='flex flex-col items-center justify-center '>
+          <List items={items} setItems={setItems} />
+        </div>
+
+
+        <div className='fixed bottom-0 left-0 right-0  p-4 bg-[#14213d]'>
+          <Resume items={items} />
+        </div>
+      </div>
+
+
+
 
     </div>
   )

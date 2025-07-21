@@ -71,51 +71,53 @@ const AddItem = ({ onItemAdded }) => {
   }
 
   return (
-    <div className='w-full'>
-      <h2 className='text-2xl ml-3 mt-5'>Adicionar item</h2>
-      <div className='flex flex-col justify-center bg-amber-800 px-4 py-2'>
-        <input className=' p-1'
+    <div className='w-full mt-4 flex flex-col'>
+
+      <div className='  px-4 py-4 flex flex-col'>
+        <input className=' p-2 text-xl'
           type="text" value={nomeProduto} onChange={(e) => setNomeProduto(e.target.value)} placeholder='Digite o nome do produto' />
 
 
-        <button onClick={adicionarItem} className='bg-blue-500 text-white p-1 rounded mt-2'>Adicionar</button>
+
       </div>
 
 
-      <div className='py-4 flex flex-col gap-2 '>
+      <div className='py-4 flex justify-center items-center  gap-6 '>
 
 
 
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">Selecionar categoria</option>
-          <option value="Carnes">Carnes</option>
-          <option value="Frutas">Frutas</option>
-          <option value="Legumes">Legumes</option>
-          <option value="Pães">Pães</option>
-          <option value="Bebidas">Bebidas</option>
-          <option value="Limpeza">Limpeza</option>
-          <option value="Higiene">Higiene</option>
-          <option value="Frios">Frios</option>
-          <option value="Outros">Outros</option>
+        <select className='text-xl p-1' value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option className='text-sm' value="">Selecionar categoria</option>
+          <option className='text-sm' value="Carnes">Carnes</option>
+          <option className='text-sm' value="Frutas">Frutas</option>
+          <option className='text-sm' value="Legumes">Legumes</option>
+          <option className='text-sm' value="Pães">Pães</option>
+          <option className='text-sm' value="Bebidas">Bebidas</option>
+          <option className='text-sm' value="Limpeza">Limpeza</option>
+          <option className='text-sm' value="Higiene">Higiene</option>
+          <option className='text-sm' value="Frios">Frios</option>
+          <option className='text-sm' value="Outros">Outros</option>
 
         </select>
 
-        <div className='flex gap-2 '>
-        <h4>Selecione o preço:</h4>
-        <input className='w-6 ' type="number" value={price} onChange={handleFixPrice} />
+        <div className='flex gap-2 items-center  '>
+          <h2 className='text-xl'>Selecione o preço:</h2>
+          <input className='w-6 p-1  border-b-2 text-lg' style={{ borderColor: '#e63946' }} type="number" value={price} onChange={handleFixPrice} />
+        </div>
+
+        <div className='flex gap-2 items-center '>
+          <h2 className='text-xl'>Selecionar quantidade:</h2>
+          <input className='w-6 p-1   border-b-2 text-lg' style={{ borderColor: '#e63946' }} type="number" value={quantity} onChange={handleFixQuantity} placeholder="Quantidade"
+            min="1" />
+        </div>
+
       </div>
 
-      <div className='flex gap-2 '>
-        <h2>Selecionar quantidade</h2>
-        <input className='w-6 ' type="number" value={quantity} onChange={handleFixQuantity} placeholder="Quantidade"
-          min="1" />
-      </div>
-
-      </div>
+      <button onClick={adicionarItem} className='bg-[#e63946] text-white p-2  text-xl  mt-2'>Adicionar</button>
 
 
-      
-      
+
+
 
     </div>
   )

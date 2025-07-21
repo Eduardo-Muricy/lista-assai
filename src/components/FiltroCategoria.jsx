@@ -2,20 +2,20 @@
 
 const FiltroCategoria = ({selectedCategory, onChange}) => {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
 
-    <label htmlFor="">Filtrar por categoria:</label>
-    <select value={selectedCategory} onChange={(e)=> onChange(e.target.value)}  >
-        <option value="">Todas as categorias</option>
-        <option value="Carnes">Carnes</option>
-        <option value="Frutas">Frutas</option>
-        <option value="Legumes">Legumes</option>
-        <option value="Pães">Pães</option>
-        <option value="Bebidas">Bebidas</option>
-        <option value="Limpeza">Limpeza</option>
-        <option value="Higiene">Higiene</option>
-        <option value="Frios">Frios</option>
-        <option value="Outros">Outros</option>
+    <h3 className="text-xl">Filtrar por categoria</h3>
+    <select className="p-1 text-lg" value={selectedCategory} onChange={(e)=> onChange(e.target.value)}  >
+        <option  className='text-sm' value="">Todas as categorias</option>
+        <option  className='text-sm' value="Carnes">Carnes</option>
+        <option  className='text-sm' value="Frutas">Frutas</option>
+        <option  className='text-sm' value="Legumes">Legumes</option>
+        <option  className='text-sm' value="Pães">Pães</option>
+        <option  className='text-sm' value="Bebidas">Bebidas</option>
+        <option  className='text-sm' value="Limpeza">Limpeza</option>
+        <option  className='text-sm' value="Higiene">Higiene</option>
+        <option  className='text-sm' value="Frios">Frios</option>
+        <option  className='text-sm' value="Outros">Outros</option>
 
       </select>
     </div>
