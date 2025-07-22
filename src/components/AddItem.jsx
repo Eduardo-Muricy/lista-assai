@@ -31,9 +31,9 @@ const AddItem = ({ onItemAdded }) => {
       purchased: false
     })
 
-   // setNomeProduto("");
-    //setCategory("");
-    //setPrice(0);
+   setNomeProduto("");
+    setCategory("");
+    setPrice(0);
     onItemAdded();
   }
 

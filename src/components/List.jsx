@@ -70,12 +70,23 @@ const List = ({ items, setItems }) => {
 
 
   return (
+
+      
+
     <div className='mt-95  '>
-      <div className=' py-2'>
+      <div className=' py-2'> 
+
+{items.length === 0 &&(
+
+  <h1 className='text-2xl text-center mt-20'>Nenhum item na lista,
+  adicione Itens</h1>
+)}
+
         {items.map((item) => (
 
           <div key={item.id} style={{borderColor: '#e63946'}} className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr_2fr] items-center border-b-1  justify-between gap-6  p-4 mb-2  ${item.purchased ? 'bg-green-500 border-none' : ''}`}>
 
+             
 
             <div className='flex items-center  min-w-0'>
 
