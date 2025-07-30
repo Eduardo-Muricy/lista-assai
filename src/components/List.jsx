@@ -62,9 +62,16 @@ const List = ({ items, setItems }) => {
   }
 
 
+ function handlePriceChange(id, value){
+  const parsed = parseFloat(value) || 0
+  setItems(prevItems => prevItems.map(i=> i.id === id ? {...i, price: parsed}: i))
 
 
+ }
 
+async function savePriceChange(id, price){
+  await db.itens.update(id, {price})
+}
 
 
 
@@ -73,7 +80,7 @@ const List = ({ items, setItems }) => {
 
       
 
-    <div className='mt-95  '>
+    <div className='mt-97 lg:mt-83 '>
       <div className=' py-2'> 
 
 {items.length === 0 &&(
@@ -84,7 +91,7 @@ const List = ({ items, setItems }) => {
 
         {items.map((item) => (
 
-          <div key={item.id} style={{borderColor: '#e63946'}} className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr_2fr] items-center border-b-1  justify-between gap-6  p-4 mb-2  ${item.purchased ? 'bg-green-500 border-none' : ''}`}>
+          <div key={item.id} style={{borderColor: '#e63946'}} className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr_2fr] items-center border-b-1 gap-4 justify-between   p-4 mb-2  ${item.purchased ? 'bg-green-500 border-none' : ''}`}>
 
              
 
@@ -98,7 +105,16 @@ const List = ({ items, setItems }) => {
             </div>
 
             <div className='flex items-center justify-center '>
-              <span>R$ {item.price.toFixed(2)}</span>
+               <input className='w-3/4 text-lg border-b-2 text-center' style={{borderColor: '#e63946'}} type="number" step={0.01} value={item.price}
+              onChange={(e)=> handlePriceChange(item.id, e.target.value)}
+
+              onBlur={()=> savePriceChange(item.id, item.price)}
+
+              onKeyDown={(e)=> {if(e.key=== 'Enter' ) e.target.blur()}  }
+              
+              />
+              
+             
             </div>
 
 
@@ -130,7 +146,7 @@ const List = ({ items, setItems }) => {
       <div className='p-10 '>
 
       </div>
-      <EditModal isOpen={isModalOpen} onSave={saveEdit} onClose={() => setIsModalOpen(false)} item={editingItem} />
+      <EditModal  isOpen={isModalOpen} onSave={saveEdit} onClose={() => setIsModalOpen(false)} item={editingItem} />
     </div>
   )
 }

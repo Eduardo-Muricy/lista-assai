@@ -1,5 +1,5 @@
-import { useEffect} from 'react'
-import { useState } from 'react';
+import { useEffect, useState } from 'react'
+
 
 const EditModal = ({ isOpen, onSave, onClose, item }) => {
   const [name, setName] = useState('');
@@ -8,15 +8,15 @@ const EditModal = ({ isOpen, onSave, onClose, item }) => {
 
 
   useEffect(() => {
-if(item){
-    setName(item.name);
-    setCategory(item.category);
-    setPrice(item.price);
-  }
+    if (item) {
+      setName(item.name);
+      setCategory(item.category);
+      setPrice(item.price);
+    }
 
-  },[item])
-  
-  
+  }, [item])
+
+
 
 
   if (!isOpen) {
@@ -29,8 +29,12 @@ if(item){
   }
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 rounded shadow-md w-96">
+
+    <div className=" flex justify-center items-center   ">
+      <div className='fixed w-full h-full  bg-black opacity-90'>
+        
+      </div>
+      <div className="bg-[#14213d] p-6 z-1 w-96">
         <h2 className="text-xl mb-4">Editar produto</h2>
         <div className="mb-3">
           <label className="block mb-1">Nome:</label>
@@ -43,18 +47,28 @@ if(item){
         </div>
         <div className="mb-3">
           <label className="block mb-1">Categoria:</label>
-         <select value={category}  onChange={(e) => setCategory(e.target.value)}>
-             <option className='bg-[#14213d]'  value="">Selecionar categoria</option>
-        <option className='bg-[#14213d]' value="Carnes">Carnes</option>
-        <option className='bg-[#14213d]' value="Frutas">Frutas</option>
-        <option className='bg-[#14213d]' value="Legumes">Legumes</option>
-        <option className='bg-[#14213d]' value="Pães">Pães</option>
-        <option className='bg-[#14213d]' value="Bebidas">Bebidas</option>
-        <option className='bg-[#14213d]' value="Limpeza">Limpeza</option>
-        <option className='bg-[#14213d]' value="Higiene">Higiene</option>
-        <option className='bg-[#14213d]' value="Frios">Frios</option>
-        <option className='bg-[#14213d]' value="Outros">Outros</option>
-         </select>
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option className='text-sm bg-[#14213d]' value="">Selecionar categoria</option>
+            <option className='text-sm bg-[#14213d]' value="Legumes">Legumes</option>
+            <option className='text-sm bg-[#14213d]' value="Verduras">Verduras </option>
+            <option className='text-sm bg-[#14213d]' value="Frutas">Frutas </option>
+            <option className='text-sm bg-[#14213d]' value="Embutidos">Embutidos </option>
+            <option className='text-sm bg-[#14213d]' value="Carnes">Carnes </option>
+            <option className='text-sm bg-[#14213d]' value="Frios">Frios</option>
+            <option className='text-sm bg-[#14213d]' value="LeiteEderivados">Leite e derivados</option>
+            <option className='text-sm bg-[#14213d]' value="Enlatados">Enlatados </option>
+            <option className='text-sm bg-[#14213d]' value="Massas">Massas</option>
+            <option className='text-sm bg-[#14213d]' value="Grãos">Grãos </option>
+            <option className='text-sm bg-[#14213d]' value="Café">Café </option>
+            <option className='text-sm bg-[#14213d]' value="Cereal">Cereal </option>
+            <option className='text-sm bg-[#14213d]' value="Bebidas">Bebidas </option>
+            <option className='text-sm bg-[#14213d]' value="Ovos">Ovos</option>
+            <option className='text-sm bg-[#14213d]' value="HigienePessoal">Higiene pessoal
+            </option>
+            <option className='text-sm bg-[#14213d]' value="HigieneLimpeza">Higiene limpeza
+            </option>
+            <option className='text-sm bg-[#14213d]' value="Farinhas">Farinhas</option>
+          </select>
         </div>
         <div className="mb-3">
           <label className="block mb-1">Preço:</label>
@@ -74,7 +88,7 @@ if(item){
           </button>
           <button
             onClick={handleSave}
-            className="bg-green-500 text-white px-4 py-2 rounded"
+            className="bg-[#e63946] text-white px-4 py-2 rounded"
           >
             Salvar
           </button>

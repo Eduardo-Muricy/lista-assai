@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="bg-[#14213d] text-white">
       <div className="fixed top-0 left-0 right-0 bg-[#14213d] " >
-        <h1 className="text-4xl text-center">Lista de compras</h1>
+        <h1 className="text-4xl text-center pt-2 lg:text-2xl lg:pt-1">Lista de compras</h1>
 
         <div className="  flex flex-col ">
 
@@ -67,7 +67,7 @@ function App() {
         </div>
 
 
-        <div className='fixed bottom-0 left-0 right-0  p-4 bg-[#14213d]'>
+        <div style={{borderColor: '#e63946'}} className='fixed bottom-0 left-0 right-0 border-t-2  p-4 bg-[#14213d]'>
           <Resume items={items} />
         </div>
       </div>
