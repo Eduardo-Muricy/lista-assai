@@ -41,12 +41,12 @@ const AddItem = ({ onItemAdded }) => {
   function handleFixQuantity(e) {
     let val = e.target.value
 
-    if (val < 1) {
-      setQuantity('')
-      return
-    }
+    if (val === '' || Number(val) <= 0) {
+    setQuantity('');
+    return;
+  }
 
-    val = Math.max(1, Math.floor(Number(val) || 1))
+    val = Math.max(0.01, parseFloat(val))
     setQuantity(val)
   }
 
@@ -96,7 +96,7 @@ const AddItem = ({ onItemAdded }) => {
 
         <div className='flex gap-2 items-center '>
           <h2 className='text-xl lg:text-sm'>Selecionar quantidade:</h2>
-          <input className='w-6 p-1 text-center  border-b-2 text-lg lg:text-sm' style={{ borderColor: '#e63946' }} type="number" value={quantity} onChange={handleFixQuantity} placeholder="Quantidade"
+          <input className='w-6 p-1 text-center  border-b-2 text-lg lg:text-sm'   step="0.01" style={{ borderColor: '#e63946' }} type="number" value={quantity} onChange={handleFixQuantity} placeholder="Quantidade"
             min="1" />
         </div>
 
